@@ -1,0 +1,70 @@
+@use '../vars' as *;
+
+.mobile-menu {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 46px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    top: 78px;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    background-color: #fff;
+    transform: translateY(calc(-100% - 78px));
+    transition: $transition;
+    display: flex;
+
+    height: 100%;
+    overflow-y: scroll;
+    &.active {
+        transform: translateY(0);
+    }
+    &__logo {
+        display: block;
+        max-width: max-content;
+        margin-bottom: 32px;
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+        margin-bottom: 62px;
+    }
+    &__item {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    &__link {
+    }
+    &__phone-link {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+        margin-bottom: 24px;
+        svg {
+            color: $accent;
+            width: 24px;
+            height: 24px;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        span {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 20px;
+        }
+    }
+    &__social-list {
+        display: flex;
+        column-gap: 12px;
+        svg {
+            color: $accent;
+        }
+    }
+}

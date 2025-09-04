@@ -1,0 +1,52 @@
+@use 'vars' as *;
+body {
+    min-height: 100vh;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: #000;
+    background-color: #fff;
+    font-size: 18px;
+    overflow-x: hidden;
+    position: relative;
+}
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+.container {
+    margin: 0 auto;
+    padding-inline: 20px;
+    max-width: 1320px;
+}
+address {
+    font-style: normal;
+}
+.date {
+    font-size: 14px;
+    color: #c4c4c4;
+}
+.no-scroll {
+    overflow: hidden;
+}
+.overlay {
+    position: fixed;
+    top: 78px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000b3;
+    z-index: -1;
+    opacity: 0;
+    transition: $transition;
+    &.active {
+        opacity: 1;
+        z-index: 1;
+    }
+}

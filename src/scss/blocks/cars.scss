@@ -1,0 +1,166 @@
+@use '../vars' as *;
+
+.cars {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #f4f6f8;
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__text {
+        margin-bottom: 40px;
+    }
+    &__content {
+        position: relative;
+    }
+    &__btn {
+        position: absolute;
+
+        top: 50%;
+        z-index: 9999;
+        @include tablet {
+            display: none;
+        }
+        &_left {
+            transform: translateY(-50%) rotate(-180deg);
+            left: -40px;
+        }
+        &_right {
+            right: -40px;
+            transform: translateY(-50%);
+        }
+    }
+}
+.cars-list {
+    display: flex;
+    // column-gap: 24px;
+    justify-content: center;
+    margin-bottom: 24px;
+    overflow: scroll;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    @include tablet {
+        // column-gap: 12px;
+        justify-content: flex-start;
+    }
+}
+.card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: #fff;
+    border-radius: $round-m;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: calc((100% / 3) - 24px);
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include tablet {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    @include custom {
+        max-width: none;
+    }
+    &__header {
+        overflow: hidden;
+        border-radius: 12px;
+        height: 261px;
+        @include tablet {
+            height: 210px;
+        }
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__image {
+        &_variant {
+            transform: scaleX(-1);
+        }
+    }
+    &__title {
+        margin-bottom: 16px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 36px;
+    }
+    &__details {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}
+.card-table {
+    &__row {
+        display: grid;
+        grid-template-columns: max-content auto max-content;
+    }
+    &__unit {
+        font-size: 16px;
+        line-height: 20px;
+        color: #00000080;
+    }
+    &__value {
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 24px;
+    }
+    &__dots {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            display: block;
+            bottom: 4px;
+
+            background-image: url('@img/line.svg');
+            background-repeat: no-repeat;
+            width: 98%;
+            height: 1px;
+            background-position: center;
+        }
+    }
+}
+.card-info {
+    &__row {
+        display: grid;
+        grid-template-columns: 173px auto;
+        align-items: center;
+        justify-content: space-between;
+        @include tablet {
+            grid-template-columns: 117px auto;
+        }
+    }
+    &__unit {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+    }
+    &__value {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        @include xxs {
+            font-size: 20px;
+        }
+        &_variant {
+            color: $accent;
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 24px;
+            @include xxs {
+                font-size: 20px;
+            }
+        }
+    }
+}

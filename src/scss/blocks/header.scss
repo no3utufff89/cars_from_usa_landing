@@ -1,0 +1,55 @@
+@use '../vars' as *;
+.header {
+    position: relative;
+    z-index: 6;
+    background-color: #fff;
+    &__row {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1320px;
+        padding-top: 11px;
+        padding-bottom: 7px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    &__logo-link {
+        margin-right: auto;
+        @include tablet {
+            margin-right: 20px;
+        }
+    }
+    &__social-list {
+        display: flex;
+        align-items: center;
+        column-gap: 12px;
+        margin-left: auto;
+        @include tablet {
+            margin-right: 25px;
+        }
+        li {
+            &:hover {
+                svg {
+                    color: $accent;
+                }
+            }
+        }
+        svg {
+            color: #000;
+        }
+    }
+    &__phones-list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 4px;
+        padding-left: 26px;
+        @include tablet {
+            display: none;
+        }
+        .phone-link {
+            font-size: 16px;
+        }
+    }
+    &__nav {
+    }
+}

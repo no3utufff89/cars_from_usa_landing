@@ -1,0 +1,28 @@
+@use '../vars' as *;
+
+.reviews-banner {
+    padding-top: 100px;
+
+    background-color: #f4f6f8;
+    @include xl-tablet {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    .container {
+        align-items: center;
+    }
+    &__content {
+        padding-left: 77px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        @include xl-tablet {
+            padding-left: 0;
+        }
+    }
+    &__title {
+        span {
+            color: $accent;
+        }
+    }
+}

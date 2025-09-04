@@ -1,0 +1,58 @@
+//default colours
+$black: #313535;
+$white: #fff;
+$accent: #f50e30;
+
+//layout colours
+//transitions
+$transition: 0.3s ease-in-out;
+//rounds
+$round-s: 8px;
+$round-m: 20px;
+$round-l: 32px;
+$round-full: 50%;
+//Media queriess
+$xxs: 375px;
+$xs: 500px;
+$mobile: 768px;
+$xl-tablet: 990px;
+$custom: 1000px;
+$tablet: 1300px;
+$laptop: 1520px;
+$transition: 0.3s ease-in-out;
+@mixin laptop {
+    @media (max-width: #{$laptop}) {
+        @content;
+    }
+}
+@mixin xl-tablet {
+    @media (max-width: #{$xl-tablet}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: #{$tablet}) {
+        @content;
+    }
+}
+@mixin custom {
+    @media (max-width: #{$custom}) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: #{$mobile}) {
+        @content;
+    }
+}
+@mixin xs {
+    @media (max-width: #{$xs}) {
+        @content;
+    }
+}
+@mixin xxs {
+    @media (max-width: #{$xxs}) {
+        @content;
+    }
+}

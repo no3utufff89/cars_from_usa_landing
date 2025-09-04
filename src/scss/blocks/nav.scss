@@ -1,0 +1,92 @@
+@use '../vars' as *;
+
+.nav {
+    display: block;
+    @include custom {
+        display: none;
+    }
+}
+.nav-list {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+    padding-inline: 10px;
+    &__item {
+        display: inline-block;
+    }
+    &__link {
+        font-size: 16px;
+        font-weight: 400;
+        transition: $transition;
+
+        &:hover {
+            color: $accent;
+        }
+        @include tablet {
+            font-size: 14px;
+        }
+    }
+}
+.nav-btn {
+    width: 24px;
+    height: 24px;
+    display: none;
+
+    background-color: transparent;
+    position: relative;
+    transition: $transition;
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: $round-s;
+        background-color: #000;
+        transition: $transition;
+    }
+    &::before {
+        top: 4px;
+
+        transition: top 0.3s 0.15s, transform 0.3s;
+    }
+    &::after {
+        bottom: 4px;
+        transition: bottom 0.3s 0.15s, transform 0.3s;
+    }
+    &.open {
+        &::before {
+            top: 11px;
+            transform: rotate(45deg);
+            box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+            transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+        }
+        &::after {
+            bottom: 11px;
+            transform: rotate(-45deg);
+            transition: bottom 0.3s, transform 0.3s 0.15s;
+        }
+        .nav-btn__line {
+            opacity: 0;
+        }
+    }
+    @include custom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__line {
+        width: 100%;
+        height: 2px;
+        border-radius: $round-s;
+        background-color: #000;
+        display: block;
+        transition: $transition;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: $transition;
+    }
+}

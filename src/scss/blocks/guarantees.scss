@@ -1,0 +1,96 @@
+@use '../vars' as *;
+
+.guarantees {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background: linear-gradient(180deg, #f4f6f8 32.38%, rgba(255, 255, 255, 0) 97.32%);
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background: url('@img/advantages-bg.jpg') lightgray 0px -520.158px / 100% 172.882% no-repeat;
+        background-size: cover;
+        background-position: center bottom -133px;
+    }
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        p {
+            max-width: 40%;
+            @include mobile {
+                max-width: none;
+            }
+        }
+    }
+}
+.guarantees-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 160px;
+    column-gap: 24px;
+    row-gap: 24px;
+    margin-bottom: 32px;
+    @include xl-tablet {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100px;
+    }
+    @include mobile {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+    &__item {
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+        padding-inline: 40px;
+        min-height: 160px;
+        @include xl-tablet {
+            padding-inline: 24px;
+            min-height: 100px;
+        }
+        @include mobile {
+        }
+    }
+}
+.guarantees-block {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    &__icon {
+        svg {
+            width: 60px;
+            height: 60px;
+            color: $accent;
+            @include tablet {
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+    &__text {
+        p {
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 36px;
+            @include tablet {
+                font-size: 16px;
+                line-height: 24px;
+            }
+        }
+    }
+}

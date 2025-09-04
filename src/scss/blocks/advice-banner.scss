@@ -1,0 +1,18 @@
+@use '../vars' as *;
+
+.advice-banner {
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__text {
+        margin-bottom: 32px;
+        max-width: 80%;
+    }
+    &__content {
+        padding-left: 60px;
+        padding-right: 42px;
+        @include tablet {
+            padding: 0;
+        }
+    }
+}

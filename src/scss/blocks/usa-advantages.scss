@@ -1,0 +1,75 @@
+@use '../vars' as *;
+
+.usa-advantages {
+    padding-top: 100px;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+.usa-advantages-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    @include custom {
+        flex-direction: column;
+    }
+    &__item {
+        background-color: #fff;
+        border-radius: $round-m;
+        box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.08);
+        height: 272px;
+
+        justify-content: center;
+        flex-shrink: 0;
+        flex-grow: 1;
+        @include custom {
+            height: auto;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+        &:nth-child(4n + 1),
+        &:nth-child(4n + 4) {
+            padding-left: 44px;
+            padding-right: 50px;
+            max-width: 60%;
+            @include custom {
+                max-width: 100%;
+            }
+        }
+        &:nth-child(4n -2),
+        &:nth-child(4n -1) {
+            padding-left: 44px;
+            padding-right: 18px;
+            max-width: calc((40% - 24px));
+            @include custom {
+                max-width: 100%;
+            }
+        }
+    }
+}
+.usa-advantage {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 44px;
+        @include tablet {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    &__text {
+        color: #000000cc;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+        @include tablet {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
